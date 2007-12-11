@@ -9,7 +9,7 @@ BuildArchitectures: noarch
 BuildRoot: %{_tmppath}/%{name}-buildroot
 Requires: initscripts >= 7.06-13mdk
 Requires: diffutils
-URL: http://www.mandrakelinux.com/
+URL: http://www.mandrivalinux.com/
 
 %description
 Manage network profiles
