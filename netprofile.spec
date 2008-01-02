@@ -6,6 +6,7 @@ Source: %{name}-%{version}.tar.bz2
 License: GPL
 Group: System/Base
 BuildArchitectures: noarch
+BuildRoot: %{_tmppath}/%{name}-buildroot
 Requires: initscripts >= 7.06-13mdk
 Requires: diffutils
 URL: http://www.mandrivalinux.com/
