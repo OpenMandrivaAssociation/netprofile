@@ -1,9 +1,9 @@
 Name: netprofile
 Summary: Manage network profiles
-Version: 0.10
-Release: %mkrel 4
+Version: 0.20
+Release: %mkrel 1
 Source: %{name}-%{version}.tar.bz2
-License: GPL
+License: GPLv2+
 Group: System/Base
 BuildArchitectures: noarch
 BuildRoot: %{_tmppath}/%{name}-buildroot
@@ -12,7 +12,10 @@ Requires: diffutils
 URL: http://www.mandrivalinux.com/
 
 %description
-Manage network profiles
+Netprofile is a Mandriva solution to manage different network profile. It
+allows to define specific network, firewall and proxy configuration to use in
+different network environment (for example, at home, at work or while roaming),
+and also provides a way for user to switch those profiles on the fly.
 
 %prep
 
@@ -27,18 +30,30 @@ rm -rf $RPM_BUILD_ROOT
 
 %post
 
+# checking for old netprofile files
+if [ -f /etc/netprofile/list ]; then
+        # upgrading from old netprofile
+        echo "Upgrading from old netprofile. Your old profiles are saved in /etc/netprofile.rpmsave"
+        # temporarily, save old files. This will be removed on newer versions.
+        mkdir /etc/netprofile.rpmsave && cp -a /etc/netprofile/list /etc/netprofile/profiles /etc/netprofile.rpmsave
+        rm -rf /etc/netprofile/profiles/*/
+        # creating new default profile
+        /sbin/netprofile switch default
+fi
+
 if [ ! -d /etc/netprofile/profiles/default ]; then
   /sbin/save-netprofile default
 fi
 
 %files
 %defattr(-,root,root) 
-%doc ChangeLog
+%doc ChangeLog TODO README NEWS
 /sbin/*
 %dir /etc/netprofile
 %dir /etc/netprofile/profiles
-%config(noreplace) /etc/netprofile/list
-%config(noreplace) /etc/bash_completion.d/netprofile
+%dir /etc/netprofile/modules
+%attr(0755,root,root) /etc/netprofile/modules/*
+/etc/bash_completion.d/netprofile
 /etc/sysconfig/network-scripts/ifup.d/netprofile
 
 
