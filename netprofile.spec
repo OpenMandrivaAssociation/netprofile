@@ -1,6 +1,6 @@
 Name: netprofile
 Summary: Manage network profiles
-Version: 0.20
+Version: 0.21
 Release: %mkrel 1
 Source: %{name}-%{version}.tar.bz2
 License: GPLv2+
@@ -9,7 +9,7 @@ BuildArchitectures: noarch
 BuildRoot: %{_tmppath}/%{name}-buildroot
 Requires: initscripts >= 7.06-13mdk
 Requires: diffutils
-URL: http://www.mandrivalinux.com/
+URL: http://git.mandriva.com/?p=projects/netprofile.git
 
 %description
 Netprofile is a Mandriva solution to manage different network profile. It
