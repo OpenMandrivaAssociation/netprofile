@@ -1,7 +1,7 @@
 Name: netprofile
 Summary: Manage network profiles
 Version: 0.22
-Release: %mkrel 1
+Release: %mkrel 2
 Source: %{name}-%{version}.tar.bz2
 License: GPLv2+
 Group: System/Base
@@ -42,7 +42,7 @@ if [ -f /etc/netprofile/list ]; then
 fi
 
 if [ ! -d /etc/netprofile/profiles/default ]; then
-  /sbin/save-netprofile default
+  /sbin/set-netprofile default
 fi
 
 %files
