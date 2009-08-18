@@ -1,7 +1,7 @@
 Name: netprofile
 Summary: Manage network profiles
-Version: 0.22
-Release: %mkrel 2
+Version: 0.23
+Release: %mkrel 1
 Source: %{name}-%{version}.tar.bz2
 License: GPLv2+
 Group: System/Base
@@ -9,6 +9,7 @@ BuildArchitectures: noarch
 BuildRoot: %{_tmppath}/%{name}-buildroot
 Requires: initscripts >= 7.06-13mdk
 Requires: diffutils
+Suggests: s2u >= 0.9.1
 URL: http://git.mandriva.com/?p=projects/netprofile.git
 
 %description
