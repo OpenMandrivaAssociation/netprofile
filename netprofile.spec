@@ -9,7 +9,9 @@ BuildArchitectures: noarch
 BuildRoot: %{_tmppath}/%{name}-buildroot
 Requires: initscripts >= 7.06-13mdk
 Requires: diffutils
-Suggests: s2u >= 0.9.1
+# s2u is used for desktop notifications. It will be pulled by xinit
+# to reduce basesystem size
+#Suggests: s2u >= 0.9.1
 URL: http://git.mandriva.com/?p=projects/netprofile.git
 
 %description
