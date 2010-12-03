@@ -1,7 +1,7 @@
 Name: netprofile
 Summary: Manage network profiles
 Version: 0.28
-Release: %mkrel 1
+Release: %mkrel 2
 Source: %{name}-%{version}.tar.bz2
 License: GPLv2+
 Group: System/Base
