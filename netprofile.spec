@@ -101,7 +101,6 @@ fi
 %dir /etc/netprofile
 %dir /etc/netprofile/profiles
 %dir /etc/netprofile/modules
-%attr(0755,root,root) /etc/netprofile/modules/*
 /etc/bash_completion.d/netprofile
 /etc/sysconfig/network-scripts/ifup.d/netprofile
 
