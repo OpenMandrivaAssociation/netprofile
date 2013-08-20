@@ -1,7 +1,7 @@
 Summary:	Manage network profiles
 Name:		netprofile
 Version:	0.28
-Release:	6
+Release:	7
 License:	GPLv2+
 Group:		System/Base
 Url:		http://git.mandriva.com/?p=projects/netprofile.git
@@ -9,6 +9,7 @@ Source0:	%{name}-%{version}.tar.bz2
 BuildArch:	noarch
 Requires:	diffutils
 Requires:	initscripts
+Requires(post):	dbus
 # s2u is used for desktop notifications. It will be pulled by xinit
 # to reduce basesystem size
 #Suggests:	s2u >= 0.9.1
