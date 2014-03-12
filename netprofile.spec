@@ -1,7 +1,7 @@
 Summary:	Manage network profiles
 Name:		netprofile
 Version:	0.28
-Release:	8
+Release:	12
 License:	GPLv2+
 Group:		System/Base
 Url:		http://git.mandriva.com/?p=projects/netprofile.git
@@ -13,11 +13,11 @@ Requires(post):	dbus
 # s2u is used for desktop notifications. It will be pulled by xinit
 # to reduce basesystem size
 #Suggests:	s2u >= 0.9.1
-Suggests:	%{name}-plugin-firewall
-Suggests:	%{name}-plugin-network
-Suggests:	%{name}-plugin-proxy
-Suggests:	%{name}-plugin-services
-Suggests:	%{name}-plugin-urpmi
+Requires:	%{name}-plugin-firewall
+Requires:	%{name}-plugin-network
+Requires:	%{name}-plugin-proxy
+Requires:	%{name}-plugin-services
+Requires:	%{name}-plugin-urpmi
 
 %description
 Netprofile is a Mandriva solution to manage different network profile. It
