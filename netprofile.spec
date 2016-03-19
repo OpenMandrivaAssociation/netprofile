@@ -1,7 +1,7 @@
 Summary:	Manage network profiles
 Name:		netprofile
 Version:	0.28
-Release:	16
+Release:	17
 License:	GPLv2+
 Group:		System/Base
 Url:		http://git.mandriva.com/?p=projects/netprofile.git
